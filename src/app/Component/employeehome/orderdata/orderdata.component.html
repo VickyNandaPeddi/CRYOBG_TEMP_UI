@@ -6,12 +6,7 @@
     </div>
     <div class="card-body">
       <form [formGroup]="formdata" (ngSubmit)="UpdateOrder()">
-        <input
-          type="hidden"
-          class="form-control"
-          id="reqno"
-          formControlName="reqNo"
-        />
+        <input type="hidden" class="form-control" id="reqno" formControlName="reqNo" />
         <div class="row">
           <div class="col">Customer Name</div>
           <div class="col">
@@ -157,13 +152,7 @@
           <div class="col">Base Price</div>
 
           <div class="col">
-            <input
-              type="number"
-              name="baseprice"
-              id="baseprice"
-              class="form-control"
-              formControlName="baseprice"
-            />
+            <input type="number" name="baseprice" id="baseprice" class="form-control" formControlName="baseprice" />
           </div>
 
           <div class="col">
@@ -172,13 +161,8 @@
           </div>
 
           <div class="col">
-            <input
-              type="date"
-              name="expectedeliverydate"
-              id="expectedeliverydate"
-              class="form-control"
-              formControlName="expectedeliverydate"
-            />
+            <input type="date" name="expectedeliverydate" id="expectedeliverydate" class="form-control"
+              formControlName="expectedeliverydate" />
           </div>
         </div>
 
@@ -186,13 +170,7 @@
           <div class="col">Call Date</div>
 
           <div class="col">
-            <input
-              type="date"
-              name="calldate"
-              id="calldate"
-              class="form-control"
-              formControlName="calldate"
-            />
+            <input type="date" name="calldate" id="calldate" class="form-control" formControlName="calldate" />
           </div>
 
           <div class="col">Model</div>
@@ -200,10 +178,7 @@
           <div class="col">
             <select class="form-control" id="model" formControlName="confmodel">
               <option [ngValue]="null" disabled>Select Model</option>
-              <option
-                *ngFor="let model of mstModel"
-                [ngValue]="model.model_code"
-              >
+              <option *ngFor="let model of mstModel" [ngValue]="model.model_code">
                 {{ model.model_desc }}
               </option>
             </select>
@@ -213,12 +188,7 @@
           <div class="col">Quantity</div>
 
           <div class="col">
-            <input
-              type="text"
-              class="form-control"
-              id="quantity"
-              formControlName="confquantity"
-            />
+            <input type="text" class="form-control" id="quantity" formControlName="confquantity" />
           </div>
 
           <div class="col"></div>
@@ -227,7 +197,8 @@
         </div>
         <br>
         <div class="row">
-          <div style="margin-right: 3mm;"   class="col-2 offset-6"> <button class="btn btn-primary" type="submit">Update Order</button></div>
+          <div style="margin-right: 3mm;" class="col-2 offset-6"> <button class="btn btn-primary" type="submit">Update
+              Order</button></div>
 
         </div>
       </form>

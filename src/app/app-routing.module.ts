@@ -3,8 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CreateorderComponent } from './Component/customerlogin/createorder/createorder.component';
 import { CustomerloginComponent } from './Component/customerlogin/customerlogin.component';
+import { CustomerorderslistComponent } from './Component/customerlogin/customerorderslist/customerorderslist.component';
 import { CustomerregisterComponent } from './Component/customerlogin/customerregister/customerregister.component';
 import { DashboardComponent } from './Component/employeehome/dashboard/dashboard.component';
+import { OrderDetailsComponent } from './Component/employeehome/order-details/order-details.component';
 import { OrderdataComponent } from './Component/employeehome/orderdata/orderdata.component';
 import { EmployeeloginComponent } from './Component/employeelogin/employeelogin.component';
 import { ContactdetailsComponent } from './Component/homepage/contactdetails/contactdetails.component';
@@ -16,10 +18,9 @@ import { InfrastructureComponent } from './Component/homepage/manufacturingunit/
 import { ProductrangeComponent } from './Component/homepage/manufacturingunit/productrange/productrange.component';
 import { QueriesComponent } from './Component/homepage/queries/queries.component';
 import {
-    RecognitionsApprovalsComponent,
+  RecognitionsApprovalsComponent,
 } from './Component/homepage/recognitions-approvals/recognitions-approvals.component';
 import { TechnicalcapabilitesComponent } from './Component/homepage/technicalcapabilites/technicalcapabilites.component';
-import { OrderDetailsComponent } from './Component/employeehome/order-details/order-details.component';
 
 const routes: Routes = [
   {
@@ -107,13 +108,14 @@ const routes: Routes = [
     path: "employeehome",
     component: DashboardComponent,
     pathMatch: "full",
-  },{
+  },
+  {
     path: "orderDetails",
     component: OrderDetailsComponent,
     pathMatch: "full",
   },
-  { path: "trndet/:reqnbr", component: OrderdataComponent }
-
+  { path: "trndet/:reqnbr", component: OrderdataComponent },
+  { path: "customerorders", component: CustomerorderslistComponent },
 ];
 
 @NgModule({

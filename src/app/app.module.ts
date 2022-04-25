@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CardsModule } from 'angular-bootstrap-md';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { ButtonModule } from 'primeng/button';
 import { MessageModule } from 'primeng/message';
@@ -17,8 +18,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateorderComponent } from './Component/customerlogin/createorder/createorder.component';
 import { CustomerloginComponent } from './Component/customerlogin/customerlogin.component';
+import { CustomerorderslistComponent } from './Component/customerlogin/customerorderslist/customerorderslist.component';
 import { CustomerregisterComponent } from './Component/customerlogin/customerregister/customerregister.component';
 import { DashboardComponent } from './Component/employeehome/dashboard/dashboard.component';
+import { OrderDetailsComponent } from './Component/employeehome/order-details/order-details.component';
 import { OrderdataComponent } from './Component/employeehome/orderdata/orderdata.component';
 import { EmployeeloginComponent } from './Component/employeelogin/employeelogin.component';
 import { ContactdetailsComponent } from './Component/homepage/contactdetails/contactdetails.component';
@@ -33,7 +36,7 @@ import {
   RecognitionsApprovalsComponent,
 } from './Component/homepage/recognitions-approvals/recognitions-approvals.component';
 import { TechnicalcapabilitesComponent } from './Component/homepage/technicalcapabilites/technicalcapabilites.component';
-import { OrderDetailsComponent } from './Component/employeehome/order-details/order-details.component';
+import { OrderdataPipe } from './Pipe/orderdata.pipe';
 
 @NgModule({
   declarations: [
@@ -51,11 +54,13 @@ import { OrderDetailsComponent } from './Component/employeehome/order-details/or
     ContactdetailsComponent,
     CustomerregisterComponent,
     QueriesComponent,
-
+    OrderdataPipe,
     CreateorderComponent,
     DashboardComponent,
     OrderdataComponent,
     OrderDetailsComponent,
+    CustomerorderslistComponent,
+    OrderdataPipe,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +79,7 @@ import { OrderDetailsComponent } from './Component/employeehome/order-details/or
     TableModule,
     ButtonModule,
     TabViewModule,
+    CardsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
