@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+
+import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root",
@@ -43,6 +44,48 @@ export class CustomerserviceService {
     return this.http.put(
       environment.backEndUrl + "/UnregCust/update/" + reqno,
       order,
+      { responseType: "json" }
+    );
+  }
+
+  updateStatusOfOrderdetails(reqno: any, status: any, remarks: any) {
+    return this.http.get(
+      environment.backEndUrl +
+        "/UnregCust/updatestatus/" +
+        status +
+        "/" +
+        remarks,
+
+      { responseType: "json" }
+    );
+  }
+  // /updateaccept/{trnutrno}/{trndate}/{trnamount}/{trnpodet}"
+  updateAcceptedDetails(
+    reqno: any,
+    trnutrno: any,
+    trndate: any,
+    trnamount: any,
+    trnpodet: any,
+    status: any,
+    remarks: any
+  ) {
+    return this.http.get(
+      environment.backEndUrl +
+        "/UnregCust/updateaccept/" +
+        reqno +
+        "/" +
+        status +
+        "/" +
+        remarks +
+        "/" +
+        trnutrno +
+        "/" +
+        trndate +
+        "/" +
+        trnamount +
+        "/" +
+        trnpodet,
+
       { responseType: "json" }
     );
   }

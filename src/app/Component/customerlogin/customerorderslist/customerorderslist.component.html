@@ -150,6 +150,51 @@
                     <span> &#58; {{ orderdetails.createdOn | date: "dd/MM/yyyy" }} </span>
                 </div>
             </div>
+            <br>
+            <br>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Order Confirmation</label>
+                <select class="form-control text-center" id="exampleFormControlSelect1" (change)="onChange($event)">
+                    <option value="">Select Order Confirmation Status</option>
+                    <option *ngFor="let orderstat of orderStatus" [value]="orderstat">
+                        {{ orderstat }}
+                    </option>
+
+                </select>
+            </div>
+            <br>
+            <div class="form-group" *ngIf="orderStatusvalue=='Request modification'|| orderStatusvalue == 'Accept'">
+                <label for="exampleFormControlTextarea1">Remarks</label>
+                <textarea [(ngModel)]="remarks" class="form-control" id="exampleFormControlTextarea1"
+                    rows="3"></textarea>
+            </div>
+            <br>
+            <div class="row form-group " *ngIf=" orderStatusvalue == 'Accept'">
+                <div class="col">
+                    <label>Trn Utr Number</label> <input class="form-control"[(ngModel)]="trnutrno" type="text" name="trnutrno">
+                </div>
+                <div class="col">
+                    <label style="margin-right: 2cm;">Trn Date</label> <input [(ngModel)]="trndate" type="datetime-local" class="form-control"
+                        name="trndate">
+                </div>
+            </div>
+            <br>
+            <div class="row" *ngIf=" orderStatusvalue == 'Accept'">
+                <div class="col">
+                    <label style="margin-right: 2cm;">Trn Amount</label> <input [(ngModel)]="trnamount" class="form-control" type="text"
+                        name="trnamount">
+                </div>
+                <div class="col">
+                    <label style="margin-right: 2cm;">Trn Po Det</label> <input  [(ngModel)]="trnpodet" class="form-control" type="text"
+                        name="trnpodet">
+                </div>
+            </div>
+            <br>
+            <div *ngIf="orderStatusvalue!=' '">
+                <button type="submit" class="btn btn-primary" (click)="submitOrderstatus()">Submit</button>
+            </div>
         </div>
+
     </div>
 </div>
